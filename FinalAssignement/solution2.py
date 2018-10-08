@@ -16,6 +16,8 @@ def nieuwe_kluis():
             line = line.split(';')
             kluislijst.remove(int(line[0]))
         nieuw = input('Voer kluiscode in: ')
+        while len(nieuw) < 4:
+            nieuw = input('Wachtwoord moet minimaal 4 karakters bevatten, voer nieuw wachtwoord in: ')
         rfile.close()
         afile = open('kluizen.txt', 'a')
         eerste_kluis = kluislijst[0]
