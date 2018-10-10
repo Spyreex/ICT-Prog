@@ -8,7 +8,7 @@ def nieuwe_kluis():
     kluislijst = [1,2,3,4,5,6,7,8,9,10,11,12]
     rfile = open('kluizen.txt', 'r')
     lines = rfile.readlines()
-    if len(lines) == 0:
+    if len(lines) > 12:
         rfile.close()
         return 'Er zijn helaas geen kluizen beschikbaar'
     else:
@@ -16,10 +16,14 @@ def nieuwe_kluis():
             line = line.split(';')
             kluislijst.remove(int(line[0]))
         nieuw = input('Voer kluiscode in: ')
+        while len(nieuw) < 4:
+            nieuw = input('Wachtwoord moet minimaal 4 karakters bevatten, voer nieuw wachtwoord in: ')
         rfile.close()
         afile = open('kluizen.txt', 'a')
         eerste_kluis = kluislijst[0]
-        afile.write('\n'+str(eerste_kluis)+';'+nieuw)
+        if len(lines) != 0:
+            afile.write('\n')
+        afile.write(str(eerste_kluis)+';'+nieuw)
         afile.close()
         return 'Jouw kluisnummer:',str(eerste_kluis)
 
