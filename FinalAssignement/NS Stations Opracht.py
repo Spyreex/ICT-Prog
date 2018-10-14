@@ -12,7 +12,7 @@ def inlezen_eindstation(stations, beginstation):
         if eindstation not in stations:
             print('Wat u heeft ingevoerd bestaat niet')
             eindstation = input('Wat is uw eindstation: ')
-        elif stations.index(eindstation) < stations.index(beginstation):
+        elif stations.index(eindstation) <= stations.index(beginstation):
             print('De ingevoerde eindstation is niet mogelijk, graag een hoger eindstation kiezen: ')
             eindstation = input('Wat is uw eindstation: ')
         else:
