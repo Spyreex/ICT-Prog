@@ -1,8 +1,8 @@
 stations = ['Schagen', 'Heerhugowaard', 'Alkmaar', 'Castricum', 'Zaandam', 'Amsterdam Sloterdijk', 'Amsterdam Centraal', 'Amsterdam Amstel', 'Utrecht Centraal', '’s-Hertogenbosch', 'Eindhoven', 'Weert', 'Roermond', 'Sittard', 'Maastricht']
 def inlezen_beginstation(stations):
     beginstation = input('Wat is uw beginstation: ')
-    while beginstation not in stations:
-        print('Wat u heeft ingevoerd bestaat niet')
+    while beginstation not in stations or beginstation == 'Maastricht':
+        print('Wat u heeft ingevoerd bestaat niet of mag niet')
         beginstation = input('Wat is uw beginstation: ')
     return beginstation
 
